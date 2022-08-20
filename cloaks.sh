@@ -2,9 +2,9 @@
 
 # The path to the linux host file
 HOSTS_FILE=/etc/hosts
-# The IP address for cloaks+
+# The IP address for Cloaks+
 IP="159.203.120.188"
-# The domain to redirect to cloaks+
+# The domain to redirect to Cloaks+
 REDIRECT_DOMAIN="s.optifine.net"
 # The value to be inserted into the hosts file
 INSERT_VALUE="$IP $REDIRECT_DOMAIN"
@@ -20,12 +20,12 @@ if [ "$OPTION" = "--install" ]; then
         if grep -q "$INSERT_VALUE" "$HOSTS_FILE"; then
             echo "Cloaks+ was successfully installed";
         else
-            echo "Failed to install cloaks+"
+            echo "Failed to install Cloaks+."
         fi
     fi
 elif [ "$OPTION" = "--uninstall" ]; then
     if grep -q "$INSERT_VALUE" "$HOSTS_FILE"; then
-        echo "Removing cloaks+"
+        echo "Removing Cloaks+"
         sudo sed -i".bak" "/$INSERT_VALUE/d" $HOSTS_FILE
         if grep -q "$INSERT_VALUE" "$HOSTS_FILE"; then
             echo "Failed to remove Cloaks+";
